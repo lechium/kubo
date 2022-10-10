@@ -5,6 +5,8 @@
 # set trap to help debug any build errors
 #trap "echo '** ERROR with build:'; pwd ; echo $?" INT TERM EXIT
 
+#make build GOOS=darwin GOARCH=arm64 CC=/usr/local/bin/$CLANG CXX=/usr/local/bin/$CLANG GOTAGS="ios" CGO_CFLAGS="-isysroot $SDK_PATH -arch arm64 -I$SDK_PATH/usr/include" CGO_LDFLAGS="-isysroot $SDK_PATH -arch arm64 -L$SDK_PATH/usr/lib/ -I$GOPATH/pkg/mod/local/kubo/include" CGO_ENABLED=1
+
 plat=$1
 SDK=iphoneos
 CLANG=clangwrap
